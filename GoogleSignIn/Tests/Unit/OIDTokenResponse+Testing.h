@@ -64,22 +64,16 @@ extern NSString * const kFatPictureURL;
                             accessToken:(NSString *)accessToken
                               expiresIn:(NSNumber *)expiresIn
                            refreshToken:(NSString *)refreshToken
-                               authTime:(NSString *)authTime
-                           tokenRequest:(OIDTokenRequest *)tokenRequest;
-
-+ (instancetype)testInstanceWithIDToken:(NSString *)idToken
-                            accessToken:(NSString *)accessToken
-                              expiresIn:(NSNumber *)expiresIn
-                           refreshToken:(NSString *)refreshToken
                        refreshExpiresIn:(NSNumber *)refreshExpiresIn
-                               authTime:(NSString *)authTime
                            tokenRequest:(OIDTokenRequest *)tokenRequest;
 
 + (NSString *)idToken;
 
 + (NSString *)fatIDToken;
 
-+ (NSString *)fatIDTokenWithAuthTime;
++ (NSString *)fatIDTokenWithClaims;
+
++ (NSArray<NSString *> *)stubbedAMRValues;
 
 /**
  * @sub The subject of the ID token.
@@ -89,6 +83,6 @@ extern NSString * const kFatPictureURL;
 
 + (NSString *)idTokenWithSub:(NSString *)sub exp:(NSNumber *)exp fat:(BOOL)fat;
 
-+ (NSString *)idTokenWithSub:(NSString *)sub exp:(NSNumber *)exp fat:(BOOL)fat authTime:(NSString *)authTime;
++ (NSString *)idTokenWithSub:(NSString *)sub exp:(NSNumber *)exp fat:(BOOL)fat claims:(BOOL)claims;
 
 @end
